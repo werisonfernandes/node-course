@@ -20,3 +20,14 @@ console.log(validator.isURL('http://url.com'));
 
 console.log(chalk.red.inverse.bold('Error!!!'));
 console.log(chalk.green.inverse.bold('Success.'));
+
+//Input via command line
+console.log('User input: ', process.argv);
+
+//Input via command line. Specific position of array.
+const command = process.argv[2];
+if(command === 'add') {
+    console.log('User input: Command added: ', process.argv[2]);
+} else if(command == 'remove') {
+    console.log('User input: Command removed: ', process.argv[2]);
+}
