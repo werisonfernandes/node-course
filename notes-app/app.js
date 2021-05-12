@@ -35,7 +35,7 @@ if(command === 'add') {
 }
 
 //Yargs parsing argv
-console.log(yargs.argv);
+//console.log(yargs.argv);
 
 //Costumize yargs version
 yargs.version('1.0.0');
@@ -44,8 +44,22 @@ yargs.version('1.0.0');
 yargs.command({
     command: 'add',
     describe: 'Add a note',
-    handler: function() {
-        console.log('Adding a new note');
+    builder: {
+        title: {
+            describe: 'Note title',
+            //To be required
+            demandOption: true,
+            type: 'string'
+        },
+        body: {
+            describe: 'Note body',
+            //To be required
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: function(argv) {
+        console.log('Adding a new note: ', argv.title + argv.body);
     }
 });
 
@@ -77,4 +91,5 @@ yargs.command({
 });
 
 //Yargs parsing argv
-console.log(yargs.argv);
+//console.log(yargs.argv);
+yargs.parse();
