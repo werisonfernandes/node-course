@@ -18,4 +18,5 @@ console.log(getNotes());
 console.log(validator.isEmail('werison@email.com'));
 console.log(validator.isURL('http://url.com'));
 
+console.log(chalk.red.inverse.bold('Error!!!'));
 console.log(chalk.green.inverse.bold('Success.'));
