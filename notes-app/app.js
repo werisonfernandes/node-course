@@ -1,5 +1,7 @@
 const fs = require('fs');
 const validator = require('validator');
+const chalk =  require('chalk');
+
 const utils = require('./utils');
 const getNotes = require('./notes');
 
@@ -15,3 +17,5 @@ console.log(getNotes());
 
 console.log(validator.isEmail('werison@email.com'));
 console.log(validator.isURL('http://url.com'));
+
+console.log(chalk.green.inverse.bold('Success.'));
